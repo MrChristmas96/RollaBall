@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         SetCountText();
         winTextobject.SetActive(false);
     }
-
+    // Bevægelse
     private void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
 
     }
-    // skal rettes så bolden kan hoppe
+    // hoppe
 
     private void OnJump(InputValue JumpValue)
     {
         rb.AddForce(Vector3.up * Jump, ForceMode.Impulse);
     }
 
-
+    // tekst
     void SetCountText()
     {
         countText.text = "Score:" + Score.ToString();
